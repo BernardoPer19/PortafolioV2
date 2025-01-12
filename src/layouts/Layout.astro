@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import "@fontsource/roboto/100.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/900.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style>
+      /* Fondo inicial con gradiente radial */
+      body {
+        background: radial-gradient(63% 63% at 48% -20%, #000a6c 1%, #080811 100%);
+        transition: background 4s ease; /* Transición suave y lenta para el fondo */
+      }
+    </style>
+  </head>
+  <body class="font-sans max-w-[1100px] m-auto inset-0 -z-10 items-center px-5 py-24 relative">
+    <div class="relative h-full w-full bg-slate-950">
+      <!-- Gradientes en la parte superior -->
+      <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+      <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+    </div>
+
+    <!-- Gradientes en la parte inferior -->
+    <div class="absolute bottom-[-5%] left-[-20%] right-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.10),rgba(255,255,255,0))]"></div>
+    <div class="absolute bottom-[-5%] right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.10),rgba(255,255,255,0))]"></div>
+
+    <main class="max-w-[1100px] m-auto">
+      <slot />
+    </main>
+
+    <script>
+      // Función para cambiar el fondo cuando se llega al final del scroll
+      function changeBackgroundOnScroll() {
+        const scrollPosition = window.scrollY; // Posición del scroll
+        const docHeight = document.documentElement.scrollHeight; // Altura total del documento
+        const winHeight = window.innerHeight; // Altura de la ventana del navegador
+        const scrollPercent = scrollPosition / (docHeight - winHeight); // Porcentaje de desplazamiento
+
+        // Si el scroll está al final de la página, cambiamos el color
+        if (scrollPercent > 0.8) { // Cuando el scroll llega al 80% de la página
+          document.body.style.background = "radial-gradient(63% 63% at 48% -20%, #003366 1%, #010d1a 100%)";  // Azul más oscuro y sutil
+        } else {
+          // Si no hemos llegado al final, mantenemos el gradiente original
+          document.body.style.background = "radial-gradient(63% 63% at 48% -20%, #000a6c 1%, #080811 100%)";
+        }
+      }
+
+      // Detectamos el evento de scroll
+      window.addEventListener('scroll', changeBackgroundOnScroll);
+    </script>
+  </body>
+</html>
