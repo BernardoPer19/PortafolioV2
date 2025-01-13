@@ -1,0 +1,65 @@
+
+<section class="flex justify-center items-center gap-14 py-12 px-6 max-w-[1100px] m-auto">
+  <!-- Lado izquierdo: Texto y Redes Sociales -->
+  <div class="w-1/2 space-y-6">
+    <h2 class="text-3xl font-semibold text-white">Conéctate conmigo</h2>
+    <p class="text-lg text-gray-300">
+      Si tienes alguna pregunta o proyecto, ¡estoy disponible para colaborar! Puedes encontrarme en las siguientes plataformas.
+    </p>
+
+    <div class="flex gap-6">
+      <!-- GitHub -->
+      <a href="https://github.com/agustinperedo" target="_blank" class="text-white hover:text-green-400 transition-colors duration-300">
+        <i class="fab fa-github text-3xl"></i>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/agustinperedo/" target="_blank" class="text-white hover:text-green-400 transition-colors duration-300">
+        <i class="fab fa-linkedin text-3xl"></i>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/agustinperedo/" target="_blank" class="text-white hover:text-green-400 transition-colors duration-300">
+        <i class="fab fa-instagram text-3xl"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Lado derecho: Formulario Horizontal (2 partes) -->
+  <div class="w-1/2 space-y-6">
+    <h2 class="text-3xl font-semibold text-white">Contáctame</h2>
+    <form action="wawxper08@gmail.com" method="POST" enctype="multipart/form-data" class="flex gap-6">
+      <!-- Nombre y Correo (lado izquierdo) -->
+      <div class="w-1/2 space-y-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          class="py-2 px-4 w-full rounded bg-transparent border-2 border-gray-300 text-white focus:outline-none focus:border-green-400 transition-colors duration-300"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="py-2 px-4 w-full rounded bg-transparent border-2 border-gray-300 text-white focus:outline-none focus:border-green-400 transition-colors duration-300"
+        />
+      </div>
+
+      <!-- Mensaje (lado derecho) -->
+      <div class="w-1/2">
+        <textarea
+          name="message"
+          placeholder="Tu mensaje"
+          rows="4"
+          class="py-2 px-4 w-full rounded bg-transparent border-2 border-gray-300 text-white focus:outline-none focus:border-green-400 transition-colors duration-300"
+        ></textarea>
+      </div>
+    </form>
+
+    <!-- Botón de Enviar -->
+    <button
+      type="submit"
+      class="w-full py-3 px-6 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 mt-4"
+    >
+      Enviar
+    </button>
+  </div>
+</section>

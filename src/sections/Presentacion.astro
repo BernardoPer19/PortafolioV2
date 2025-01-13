@@ -1,10 +1,13 @@
-<main class="flex justify-center items-center gap-8 bg-gray-900 p-10">
+<main class="flex justify-center items-center gap-8 bg-gray-900 p-10 flex-col lg:flex-row">
+  <!-- Imagen de perfil -->
   <img
     src="https://static.vecteezy.com/system/resources/previews/005/005/788/non_2x/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg"
     alt="Imagen de perfil"
-    class="size-48 rounded-full"
+    class="size-48 rounded-full mb-8 lg:mb-0"
   />
-  <div class="flex flex-col gap-5 text-white">
+  
+  <!-- Contenedor de texto -->
+  <div class="flex flex-col gap-5 text-white text-center lg:text-left">
     <h1 class="text-4xl font-bold text-blue-600">
       Hola, soy <span class="text-blue-400">Agustín Bernardo Peredo Rodríguez</span>, tu desarrollador <span class="font-semibold">frontend freelance</span>
     </h1>
@@ -14,10 +17,51 @@
     <p class="font-medium text-lg">
       Como freelancer, me enfoco en entregar <span class="font-semibold text-blue-400">resultados rápidos</span> y <span class="font-semibold text-blue-400">eficientes</span>, adaptándome a las necesidades específicas de cada cliente. Si estás buscando un desarrollador que pueda ayudarte a materializar tus ideas de manera <span class="text-blue-500">profesional</span> y <span class="text-blue-500">ágil</span>, ¡estoy aquí para hacerlo realidad!
     </p>
-    <div class="flex items-center gap-4 mt-5">
+    <div class="flex items-center justify-center gap-4 mt-5 lg:justify-start">
       <button class="px-6 py-3 bg-white text-blue-900 rounded-md hover:bg-blue-100">Descargar CV</button>
-      <a href="https://github.com/BernardoPer19?tab=overview&from=2025-01-01&to=2025-01-11"><i class="fa-brands fa-github text-white text-3xl cursor-pointer hover:text-blue-400"></i>  </a>
+      <a href="https://github.com/BernardoPer19?tab=overview&from=2025-01-01&to=2025-01-11" target="_blank">
+        <i class="fa-brands fa-github text-white text-3xl cursor-pointer hover:text-blue-400"></i>
+      </a>
       <i class="fa-brands fa-whatsapp text-white text-3xl cursor-pointer hover:text-blue-400"></i>
+      <i class="fa-solid fa-envelope  text-white text-3xl cursor-pointer hover:text-blue-400"></i>
     </div>
   </div>
 </main>
+
+<!-- Estilos adicionales para asegurar la responsividad -->
+<style>
+  @media (max-width: 1024px) {
+    main {
+      padding: 6px; /* Reduce el padding en pantallas más pequeñas */
+    }
+    .size-48 {
+      width: 96px; /* Imagen de perfil más pequeña en pantallas pequeñas */
+      height: 96px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .text-4xl {
+      font-size: 2.5rem; /* Ajustar tamaño del título */
+    }
+    .font-medium {
+      font-size: 1rem; /* Reducir tamaño del texto en móviles */
+    }
+    .size-48 {
+      width: 72px; /* Imagen de perfil más pequeña en pantallas móviles */
+      height: 72px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gap-8 {
+      gap: 4px; /* Reducir el espacio entre elementos en pantallas más pequeñas */
+    }
+    .text-lg {
+      font-size: 0.9rem; /* Ajustar tamaño de texto para dispositivos más pequeños */
+    }
+    .text-center {
+      text-align: center; /* Asegurar que el texto esté centrado en pantallas muy pequeñas */
+    }
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+const { title, description, imageSrc, technologies, githubLink, liveLink } = Astro.props;
+---
+
+<div class="project-card flex flex-col items-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-full">
+  <!-- Imagen del Proyecto (Arriba) -->
+  <div class="project-image w-full">
+    <img src={imageSrc} alt={title} class="w-full h-64 object-cover rounded-lg" />
+  </div>
+
+  <!-- Contenido del Proyecto (Debajo de la imagen) -->
+  <div class="project-info text-center mt-6 w-full">
+    <!-- Título del Proyecto -->
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-2xl font-semibold text-white">{title}</h3>
+      <div class="flex gap-2">
+        {technologies.map((tech:any) => (
+          <div class="tech-icon">
+            <i class={`devicon-${tech.toLowerCase()}-plain colored text-3xl`} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Descripción del Proyecto -->
+    <p class="text-gray-300 text-lg mb-4 text-start">{description}</p>
+
+    <!-- Botones de enlaces -->
+    <div class="buttons flex justify-start gap-6">
+      {githubLink && (
+        <a href={githubLink} target="_blank" class="text-white bg-[#333] hover:bg-[#444] px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
+          GitHub
+        </a>
+      )}
+      {liveLink && (
+        <a href={liveLink} target="_blank" class="text-white bg-[#1D72B8] hover:bg-[#1675a1] px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
+          Ver en Live
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Fondo radial -->
+  <div class="absolute top-0 left-0 right-0 bottom-0 rounded-lg bg-gradient-to-r from-pink-500 to-blue-500 opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
+</div>
+
+<style>
+  .project-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .tech-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tech-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  .project-info {
+    width: 100%;
+  }
+</style>
