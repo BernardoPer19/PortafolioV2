@@ -13,6 +13,7 @@
     "@fontsource/roboto": "^5.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "aos": "^2.3.4",
     "astro": "^5.1.5",
     "astro-icon": "^1.1.5",
     "font-awesome": "^4.7.0",

@@ -12,6 +12,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/roboto/900.css";
 import Footer from "../components/Footer.astro";
+import 'aos/dist/aos.css';
 ---
 
 <!doctype html>
@@ -23,53 +24,41 @@ import Footer from "../components/Footer.astro";
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-   
   </head>
-  <body class=" overflow-x-hidden m-auto  bg-[#1a2a3b text-white py-12 mt-8 w-full bg-[radial-gradient(63%_63%_at_48%_20%,_#000a6c_1%,_#080811_100%)]">
+  <body
+    class="overflow-x-hidden m-auto bg-[#1a2a3b text-white py-12 mt-8 w-full bg-[radial-gradient(63%_63%_at_48%_20%,_#000a6c_1%,_#080811_100%)]"
+  >
     <div class="relative h-full w-full bg-slate-950">
       <!-- Gradientes en la parte superior -->
-      <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
-      <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+      <div
+        class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+      >
+      </div>
     </div>
 
-    <main class=" m-auto max-w-[1280px] " >
+    <main class="m-auto max-w-[1280px]">
       <slot />
     </main>
-    <Footer/>
-    
-    
+    <Footer />
+
+
     <script>
-      // Función para cambiar el fondo cuando se llega al final del scroll
-      function changeBackgroundOnScroll() {
-        const scrollPosition = window.scrollY; // Posición del scroll
-        const docHeight = document.documentElement.scrollHeight; // Altura total del documento
-        const winHeight = window.innerHeight; // Altura de la ventana del navegador
-        const scrollPercent = scrollPosition / (docHeight - winHeight); // Porcentaje de desplazamiento
-
-        // Si el scroll está al final de la página, cambiamos el color
-        if (scrollPercent > 0.8) { // Cuando el scroll llega al 80% de la página
-          document.body.style.background = "radial-gradient(63% 63% at 48% -20%, #003366 1%, #080811 100%)";  // Azul más oscuro y sutil
-        } else {
-          // Si no hemos llegado al final, mantenemos el gradiente original
-          document.body.style.background = "radial-gradient(63% 63% at 48% -20%, #000a6c 1%, #080811 100%)";
-        }
-      }
-
-      // Detectamos el evento de scroll
-      window.addEventListener('scroll', changeBackgroundOnScroll);
+      import AOS from "aos";
+      AOS.init();
     </script>
   </body>
 </html>
 
- <style>
-      /* Fondo inicial con gradiente radial */
-      body {
-       
-        transition: background 4s ease; /* Transición suave y lenta para el fondo */
-      }
 
-
-    </style>

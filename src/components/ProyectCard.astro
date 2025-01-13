@@ -1,8 +1,8 @@
 ---
-const { title, description, imageSrc, technologies, githubLink, liveLink } = Astro.props;
+const { title, description, imageSrc, technologies, githubLink, liveLink,scroll } = Astro.props;
 ---
 
-<div class="project-card flex flex-col items-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-full">
+<div class="project-card flex flex-col items-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-full"  data-aos=`fade-${scroll}` data-aos-duration="1000">
   <!-- Imagen del Proyecto (Arriba) -->
   <div class="project-image w-full">
     <img src={imageSrc} alt={title} class="w-full h-64 object-cover rounded-lg" />
