@@ -2,7 +2,7 @@
 const { title, description, imageSrc, technologies, githubLink, liveLink,scroll } = Astro.props;
 ---
 
-<div class="project-card flex flex-col items-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-full"  data-aos=`fade-${scroll}` data-aos-duration="1000">
+<div class="project-card flex flex-col items-center justify-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-[600px]"  data-aos=`fade-${scroll}` data-aos-duration="1000">
   <!-- Imagen del Proyecto (Arriba) -->
   <div class="project-image w-full">
     <img src={imageSrc} alt={title} class="w-full h-64 object-cover rounded-lg" />
@@ -33,7 +33,7 @@ const { title, description, imageSrc, technologies, githubLink, liveLink,scroll 
         </a>
       )}
       {liveLink && (
-        <a href={liveLink} target="_blank" class="text-white bg-[#1D72B8] hover:bg-[#1675a1] px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
+        <a href={liveLink} target="_blank" class="text-white px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
           Ver en Live
         </a>
       )}
@@ -41,7 +41,7 @@ const { title, description, imageSrc, technologies, githubLink, liveLink,scroll 
   </div>
 
   <!-- Fondo radial -->
-  <div class="absolute top-0 left-0 right-0 bottom-0 rounded-lg bg-gradient-to-r from-pink-500 to-blue-500 opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
+  <div class="absolute top-0 left-0 right-0 bottom-0 rounded-lg  opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
 </div>
 
 <style>
@@ -52,6 +52,7 @@ const { title, description, imageSrc, technologies, githubLink, liveLink,scroll 
 
   .project-card:hover .project-image img {
     transform: scale(1.05);
+    transition: .6s;
   }
 
   .project-card:hover {
