@@ -1,12 +1,116 @@
----
-import Experiencia from "./Experiencia.astro";
-import Presentacion from "../sections/Presentacion.astro";
-import MyTecnologies from "./MyTecnologies.astro";
----
+<header class="w-full h-screen m-auto flex items-center xl:w-full xl:p-10">
+  <main
+    class="flex justify-center px-6 sm:px-16 w-full h-[700px] items-center gap-10 bg-[#252525] flex-col lg:flex-row m-auto rounded-xl"
+    data-aos="fade-left"
+    data-aos-duration="3000"
+  >
+    <div class="flex flex-col gap-5 text-white text-center lg:text-left">
+      <h1
+        class="text-4xl font-bold text-center"
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
+      >
+        Hola, soy <span class="text-green-400">Agustín Peredo </span> desarrollador
+        <span class="font-semibold text-green-600">frontend freelance</span>
+      </h1>
+      <p
+        class="font-medium text-lg text-center"
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
+      >
+        Con <span class="font-semibold text-green-400">19 años</span> y más de <span
+          class="font-semibold text-green-400">8 meses de experiencia</span
+        > en el desarrollo de aplicaciones web, me especializo en crear soluciones
+        <span class="text-green-500">interactivas</span>, <span
+          class="text-green-500">escalables</span
+        > y <span class="text-green-500">modernas</span>. Mi objetivo es ayudar
+        a <span class="font-semibold text-green-400">startups</span> y empresas a
+        llevar sus proyectos al siguiente nivel, ofreciendo soluciones a medida que
+        mejoren la experiencia del usuario.
+      </p>
 
-<header
-class="w-full h-screen
-m-auto flex items-center"
->
-  <Presentacion />
+      <div
+        class="flex items-center justify-center gap-4 mt-5 lg:justify-center"
+      >
+        <a href="src/assets/AgustinBernardoPeredo.pdf" download>
+          <button
+            class="px-6 py-3 bg-white text-green-900 rounded-md hover:bg-green-100"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1200"
+          >
+            Descargar CV
+          </button>
+        </a>
+        
+        <a
+          href="https://github.com/BernardoPer19?tab=overview&from=2025-01-01&to=2025-01-11"
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1250"
+        >
+          <i
+            class="fa-brands fa-github text-white text-3xl cursor-pointer hover:text-green-400"
+          ></i>
+        </a>
+        <a href="https://wa.me/64854829/?text=Hola, me interesó tu porfolio!">
+          <i
+            class="fa-brands fa-whatsapp text-white text-3xl cursor-pointer hover:text-green-400"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1300"
+          ></i>
+        </a>
+
+        <a href="https://mail.google.com/mail/u/0/?hl=es#inbox">
+          <i
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1350"
+            class="fa-solid fa-envelope text-white text-3xl cursor-pointer hover:text-green-400"
+          ></i>
+        </a>
+      </div>
+    </div>
+  </main>
 </header>
+
+<style>
+  @media (max-width: 1024px) {
+    main {
+      padding: 6px;
+    }
+    .size-48 {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .text-4xl {
+      font-size: 2.5rem;
+    }
+    .font-medium {
+      font-size: 1rem;
+    }
+    .size-48 {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gap-8 {
+      gap: 4px;
+    }
+    .text-lg {
+      font-size: 0.9rem;
+    }
+    .text-center {
+      text-align: center;
+    }
+  }
+</style>

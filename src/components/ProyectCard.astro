@@ -1,47 +1,84 @@
 ---
-const { title, description, imageSrc, technologies, githubLink, liveLink,scroll } = Astro.props;
+const {
+  title,
+  description,
+  imageSrc,
+  technologies,
+  githubLink,
+  liveLink,
+  scroll,
+} = Astro.props;
 ---
 
-<div class="project-card flex flex-col items-center justify-center bg-[#1E1E2D] p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group max-w-4xl w-[600px]"  data-aos=`fade-${scroll}` data-aos-duration="1000">
+<div
+  class={`project-card flex flex-col items-center justify-center bg-[#1E1E2D] p-6 md:p-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 relative group w-full md:max-w-4xl md:w-[600px]`}
+  data-aos={`fade-${scroll}`}
+  data-aos-duration="1000"
+>
   <!-- Imagen del Proyecto (Arriba) -->
   <div class="project-image w-full">
-    <img src={imageSrc} alt={title} class="w-full h-64 object-cover rounded-lg" />
+    <img
+      src={imageSrc}
+      alt={title}
+      class="w-full h-48 md:h-64 object-cover rounded-lg"
+    />
   </div>
 
   <!-- Contenido del Proyecto (Debajo de la imagen) -->
   <div class="project-info text-center mt-6 w-full">
     <!-- Título del Proyecto -->
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="text-2xl font-semibold text-white">{title}</h3>
+    <div class="flex flex-col md:flex-row items-center justify-between mb-4">
+      <h3 class="text-xl md:text-2xl font-semibold text-white mb-2 md:mb-0">{title}</h3>
       <div class="flex gap-2">
-        {technologies.map((tech:any) => (
-          <div class="tech-icon">
-            <i class={`devicon-${tech.toLowerCase()}-plain colored text-3xl`} />
-          </div>
-        ))}
+        {
+          technologies.map((tech: any) => (
+            <div class="tech-icon">
+              <i
+                class={`devicon-${tech.toLowerCase()}-plain colored text-3xl`}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Descripción del Proyecto -->
-    <p class="text-gray-300 text-lg mb-4 text-start">{description}</p>
+    <p class="text-gray-300 text-base md:text-lg mb-4 text-start">{description}</p>
 
     <!-- Botones de enlaces -->
-    <div class="buttons flex justify-start gap-6">
-      {githubLink && (
-        <a href={githubLink} target="_blank" class="text-white bg-[#333] hover:bg-[#444] px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
-          GitHub
-        </a>
-      )}
-      {liveLink && (
-        <a href={liveLink} target="_blank" class="text-white px-6 py-3 z-40 rounded-full text-sm cursor-pointer">
-          Ver en Live
-        </a>
-      )}
+    <div class="buttons flex flex-wrap justify-center gap-6">
+      {
+        githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            class="text-white bg-[#333] hover:bg-[#444] px-3 py-2 z-40 rounded-full text-sm cursor-pointer"
+          >
+            <i class="fa-brands fa-github text-white text-3xl cursor-pointer hover:text-green-400" />
+          </a>
+        )
+      }
+      {
+        liveLink && (
+          <a
+            href={liveLink}
+            target="_blank"
+            class="text-white px-6 py-3 z-40 rounded-full text-sm cursor-pointer"
+          >
+            <button>
+              Ver en Live
+            </button>
+          </a>
+        )
+      }
     </div>
   </div>
 
   <!-- Fondo radial -->
-  <div class="absolute top-0 left-0 right-0 bottom-0 rounded-lg  opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
+  <div
+    class="absolute top-0 left-0 right-0 bottom-0 rounded-lg opacity-10 group-hover:opacity-20 transition-all duration-300"
+  >
+  </div>
 </div>
 
 <style>
@@ -52,7 +89,7 @@ const { title, description, imageSrc, technologies, githubLink, liveLink,scroll 
 
   .project-card:hover .project-image img {
     transform: scale(1.05);
-    transition: .6s;
+    transition: 0.6s;
   }
 
   .project-card:hover {
@@ -60,7 +97,9 @@ const { title, description, imageSrc, technologies, githubLink, liveLink,scroll 
   }
 
   .tech-icon {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .tech-icon:hover {

@@ -1,5 +1,4 @@
 ---
-// src/pages/index.astro
 interface Props {
   title: string;
 }
@@ -16,39 +15,65 @@ import 'aos/dist/aos.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
+    <!-- Meta Charset -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+
+    <!-- Viewport for Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title with Personal Branding -->
+    <title>{title} | Portafolio de Agustín Bernardo Peredo</title>
+
+    <!-- Meta Description with Targeted Keywords -->
+    <meta name="description" content="Descubre el portafolio de Agustín Bernardo Peredo, desarrollador frontend especializado en React, TypeScript, diseño web, y desarrollo de aplicaciones modernas.">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="{title} | Portafolio de Agustín Bernardo Peredo">
+    <meta property="og:description" content="Explora el portafolio de Agustín Bernardo Peredo, un desarrollador frontend con experiencia en tecnologías como React, TypeScript, y diseño web.">
+   
+
+    <!-- Twitter Card (Twitter Optimization) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{title} | Portafolio de Agustín Bernardo Peredo">
+    <meta name="twitter:description" content="Explora el portafolio de Agustín Bernardo Peredo, desarrollador frontend con experiencia en React, TypeScript y diseño web.">
+  
+
+    <!-- Author and Robots -->
+    <meta name="author" content="Agustín Bernardo Peredo">
+    <meta name="robots" content="index, follow">
+
+    <!-- Font Awesome and Devicon for Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body
-  class="bg-[#131212]"
-  >
-   
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts (Roboto) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" />
+
+    <!-- Meta Generator -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="bg-[#131212]">
     <main class="m-auto max-w-[1280px]">
       <slot />
     </main>
     <Footer />
 
-
+    <!-- AOS Initialization Script -->
     <script>
       import AOS from "aos";
       AOS.init();
     </script>
   </body>
 </html>
-
-
